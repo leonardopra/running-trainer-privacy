@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Running Trainer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --ink: #1a1a18;
+    --accent: #e8460a;
+    --muted: #888880;
+    --border: #dedad2;
+    --card: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .lang-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+  .lang-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    cursor: pointer;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .lang-btn.active { color: #fff; }
+  .lang-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  header {
+    padding: 80px 24px 60px;
+    max-width: 780px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+  .app-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  header h1 em { font-style: italic; color: var(--accent); }
+  .meta { font-size: 14px; color: var(--muted); }
+
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 24px 120px;
+  }
+
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+
+  section { margin-bottom: 52px; }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--ink);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 14px; color: #3a3a36; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { list-style: none; margin: 12px 0; }
+  ul li {
+    padding: 8px 0 8px 20px;
+    position: relative;
+    color: #3a3a36;
+    border-bottom: 1px solid var(--border);
+  }
+  ul li:last-child { border-bottom: none; }
+  ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .highlight-box {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .highlight-box p { margin: 0; font-size: 15px; }
+
+  .warning-box {
+    background: #fff8f0;
+    border-left: 3px solid #e8460a;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .warning-box p { margin: 0; font-size: 15px; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer span { font-size: 13px; color: var(--muted); }
+  .footer-logo { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('it')">🇮🇹 Italiano</button>
+  <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+</div>
+
+<header>
+  <div class="app-tag">Running Trainer</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="meta">Ultimo aggiornamento / Last updated: maggio 2025</p>
+</header>
+
+<main>
+
+  <!-- ITALIANO -->
+  <div class="lang-content active" id="it">
+
+    <section>
+      <h2>1. Introduzione</h2>
+      <p>Benvenuto in Running Trainer. La presente informativa descrive come raccogliamo, utilizziamo e proteggiamo i tuoi dati personali quando utilizzi la nostra applicazione.</p>
+      <div class="highlight-box">
+        <p>Running Trainer non richiede account, login o registrazione. Tutti i dati sono salvati localmente sul tuo dispositivo e non vengono mai trasmessi a server esterni, salvo quanto indicato nella sezione Claude AI.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Dati raccolti e memorizzati</h2>
+      <p>L'app raccoglie e memorizza localmente sul tuo dispositivo le seguenti informazioni:</p>
+      <ul>
+        <li><strong>Dati del profilo:</strong> nome, età, peso e altezza inseriti volontariamente per personalizzare i piani di allenamento.</li>
+        <li><strong>Dati di allenamento:</strong> piani di allenamento, sessioni completate, distanza, ritmo, durata e obiettivi.</li>
+        <li><strong>Notifiche:</strong> i promemoria di allenamento sono pianificati localmente sul dispositivo. Nessun dato viene inviato a server esterni.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Claude AI (opzionale)</h2>
+      <p>L'app offre un'integrazione opzionale con l'API di Claude (Anthropic) per generare descrizioni di coaching e feedback post-allenamento.</p>
+      <ul>
+        <li>L'utilizzo di questa funzione richiede l'inserimento di una API key personale di Anthropic.</li>
+        <li>Se fornita, i dati degli allenamenti vengono inviati alle API di Anthropic per generare i contenuti.</li>
+        <li>Questa funzione è completamente opzionale — l'app funziona interamente offline senza API key.</li>
+        <li>Per informazioni su come Anthropic gestisce i dati, consulta la <a href="https://www.anthropic.com/privacy" target="_blank">Privacy Policy di Anthropic</a>.</li>
+      </ul>
+      <div class="warning-box">
+        <p>⚠️ <strong>Avviso di sicurezza:</strong> la API key viene salvata in chiaro nelle preferenze locali del dispositivo. Non utilizzare questa app su dispositivi condivisi o con root se desideri mantenere segreta la tua chiave.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Nessun tracciamento</h2>
+      <p>Running Trainer non include analytics, crash reporting o tracciamento dell'utilizzo. Non sono presenti SDK di terze parti con funzionalità di tracking.</p>
+    </section>
+
+    <section>
+      <h2>5. Sicurezza dei dati</h2>
+      <p>I dati del profilo (nome, età, peso, altezza) sono memorizzati localmente sul dispositivo. I piani di allenamento, i log degli allenamenti e le informazioni del profilo non lasciano mai il dispositivo, a meno che tu non li condivida esplicitamente o non utilizzi la funzione Claude AI.</p>
+    </section>
+
+    <section>
+      <h2>6. Dati di minori</h2>
+      <p>Running Trainer non è destinata a bambini di età inferiore ai 13 anni. Non raccogliamo consapevolmente dati da minori. Se sei un genitore o tutore e ritieni che tuo figlio abbia fornito dati tramite l'app, ti invitiamo a contattarci.</p>
+    </section>
+
+    <section>
+      <h2>7. Eliminazione dei dati</h2>
+      <p>Puoi eliminare tutti i dati dell'app in qualsiasi momento tramite <strong>Impostazioni → Reset All Data</strong>. La disinstallazione dell'app rimuove tutti i dati salvati localmente.</p>
+    </section>
+
+    <section>
+      <h2>8. Modifiche alla presente informativa</h2>
+      <p>Ci riserviamo il diritto di aggiornare questa informativa. In caso di modifiche sostanziali, ti informeremo tramite un avviso nell'app. La data di ultimo aggiornamento è indicata in cima a questa pagina.</p>
+    </section>
+
+    <section>
+      <h2>9. Contatti</h2>
+      <p>Per qualsiasi domanda relativa alla privacy:</p>
+      <div class="highlight-box">
+        <p>📧 <a href="mailto:privacy@runningtrainer.app">privacy@runningtrainer.app</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ENGLISH -->
+  <div class="lang-content" id="en">
+
+    <section>
+      <h2>1. Introduction</h2>
+      <p>Welcome to Running Trainer. This privacy policy describes how we collect, use, and protect your personal data when you use our application.</p>
+      <div class="highlight-box">
+        <p>Running Trainer requires no account, login, or registration. All data is stored locally on your device and never transmitted to external servers, except as described in the Claude AI section.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Data Collected and Stored</h2>
+      <p>The app collects and stores the following information locally on your device:</p>
+      <ul>
+        <li><strong>Profile data:</strong> name, age, weight, and height voluntarily entered to personalize training plans.</li>
+        <li><strong>Training data:</strong> training plans, completed sessions, distance, pace, duration, and goals.</li>
+        <li><strong>Notifications:</strong> workout reminders are scheduled locally on your device. No data is sent to external servers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Claude AI (Optional)</h2>
+      <p>The app offers an optional integration with Claude's API (Anthropic) to generate coaching descriptions and post-workout feedback.</p>
+      <ul>
+        <li>Using this feature requires providing a personal Anthropic API key.</li>
+        <li>If provided, workout data is sent to Anthropic's API to generate content.</li>
+        <li>This feature is entirely optional — the app works fully offline without an API key.</li>
+        <li>For information on how Anthropic handles data, refer to <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic's Privacy Policy</a>.</li>
+      </ul>
+      <div class="warning-box">
+        <p>⚠️ <strong>Security notice:</strong> the API key is stored in plain text in local device preferences. Do not use this app on a shared or rooted device if you care about keeping your key secret.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. No Tracking</h2>
+      <p>Running Trainer does not include analytics, crash reporting, or usage tracking. No third-party SDKs with tracking capabilities are included.</p>
+    </section>
+
+    <section>
+      <h2>5. Data Security</h2>
+      <p>Profile data (name, age, weight, height) is stored locally on your device. Training plans, workout logs, and personal profile information never leave your device unless you explicitly share them or use the Claude AI feature.</p>
+    </section>
+
+    <section>
+      <h2>6. Children's Data</h2>
+      <p>Running Trainer is not intended for children under the age of 13. We do not knowingly collect data from minors. If you are a parent or guardian and believe your child has provided data through the app, please contact us.</p>
+    </section>
+
+    <section>
+      <h2>7. Data Deletion</h2>
+      <p>You can delete all app data at any time via <strong>Settings → Reset All Data</strong>. Uninstalling the app removes all locally stored data.</p>
+    </section>
+
+    <section>
+      <h2>8. Changes to This Policy</h2>
+      <p>We reserve the right to update this privacy policy. In case of substantial changes, we will notify you via an in-app notice. The last update date is shown at the top of this page.</p>
+    </section>
+
+    <section>
+      <h2>9. Contact</h2>
+      <p>For any privacy-related questions:</p>
+      <div class="highlight-box">
+        <p>📧 <a href="mailto:leopra.dev@gmail.com">leopra.dev@gmail.com</a></p>
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-logo">Running Trainer</span>
+  <span>© 2025 — Tutti i diritti riservati / All rights reserved</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById(lang).classList.add('active');
+    document.querySelector('[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
